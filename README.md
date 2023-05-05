@@ -1,0 +1,2 @@
+# akademy
+School Management System
