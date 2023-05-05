@@ -8,6 +8,14 @@ import (
 	"gorm.io/gorm"
 )
 
+type UserRepository interface {
+	Create(*User) error
+	FindUser(id string) (*User, error)
+	FetchAllUsers() ([]*User, error)
+	UpdateUser(*User) error
+	DeleteUser(id string) error
+}
+
 type User struct {
 	gorm.Model
 	FirstName   string

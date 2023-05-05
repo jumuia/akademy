@@ -8,6 +8,14 @@ import (
 	"github.com/jumuia/akademy/internal/repository"
 )
 
+type UserService interface {
+	Create(*User) error
+	FindUser(id string) (*User, error)
+	FetchAllUsers() ([]*User, error)
+	UpdateUser(*User) error
+	DeleteUser(id string) error
+}
+
 type User struct {
 	FirstName   string
 	MiddleName  string
