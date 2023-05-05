@@ -13,6 +13,11 @@ protoc:
 	protoc api/v1/*.proto --go_out=. --go_opt=paths=source_relative --proto_path=.
 docker:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o ./$(BINARY_LOC)/$(BINARY_NAME) -v ./cmd/$(BINARY_NAME)/...
+compose-up:
+	docker compose up --build
+compose-down:
+	docker compose down
+	docker compose stop
 package:
 	docker build -t $(DOCKER_REPOSITORY_OWNER)/$(BINARY_NAME):$(VERSION) .
 publish:

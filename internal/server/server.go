@@ -45,8 +45,9 @@ func configureUserRoutes(r *gin.Engine, h handler.UserHandler) {
 			"message": fmt.Sprintf("Pont @ %s", time.Now().String()),
 		})
 	})
-	r.POST("/akademy/v1/users", h.CreateUser)
-	r.GET("/akademy/v1/users", h.ReadUser)
-	r.PATCH("/akademy/v1/users/:user_id", h.UpdateUser)
-	r.DELETE("/akademy/v1/users/:user_id", h.DeleteUser)
+	r.POST("/akademy/api/v1/users", h.CreateUser)
+	r.GET("/akademy/api/v1/users", h.FetchAllUsers)
+	r.GET("/akademy/api/v1/users/:user_id", h.FetchUser)
+	r.PATCH("/akademy/api/v1/users/:user_id", h.UpdateUser)
+	r.DELETE("/akademy/api/v1/users/:user_id", h.DeleteUser)
 }
