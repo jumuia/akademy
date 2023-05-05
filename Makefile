@@ -35,6 +35,7 @@ test:
 clean:
 	$(GOCLEAN)
 	rm -rf $(BINARY_LOC)
+	rm -rf db-data
 run: clean build
 ifeq ($(OS),Windows_NT)
 	./$(BINARY_LOC)/$(BINARY_NAME).exe
