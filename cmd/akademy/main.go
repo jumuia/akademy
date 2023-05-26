@@ -29,5 +29,9 @@ func main() {
 		DBHost:     dbHost,
 		DBPort:     dbPort,
 	}
-	log.Fatal(server.Run(&cfg))
+	err = server.Run(&cfg)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Println("Exiting the server...")
 }

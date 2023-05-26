@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "df95ab9b-eadd-4270-981a-6f2df42e3407",
+		"name": "Akademy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "186548",
+		"_collection_link": "https://winter-flare-633504.postman.co/workspace/I'm-Kernel-Dev~23387dec-b9cb-415a-b29e-9d9cbba7d350/collection/186548-df95ab9b-eadd-4270-981a-6f2df42e3407?action=share&creator=186548&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Yesu Alwin\",\n    \"middle_name\": \"Jason\",\n    \"last_name\": \"Doss\",\n    \"dob\": \"1984-08-08\",\n    \"phone_number\": \"+91 988888888\",\n    \"email\": \"alwin@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/akademy/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"akademy",
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/akademy/api/v1/users/1",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"akademy",
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:{{PORT}}/ping",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
